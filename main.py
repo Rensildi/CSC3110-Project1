@@ -43,6 +43,6 @@ vertices = list(string.ascii_uppercase[:num_vertices])
 relabeling = {i: vertices[i] for i in range(len(vertices))}
 G = nx.relabel_nodes(G, relabeling)
 
-cycle = dfs_method.dfs_cycle_detection(G)
+cycle = dfs_method.find_cycle_dfs(G)
 
 plot_graph_with_cycle(G, cycle)

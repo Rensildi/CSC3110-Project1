@@ -1,4 +1,4 @@
-def bfs_cycle_detection(graph):
+def find_cycle_bfs(graph):
     def is_cycle(path):
         return len(path) > 1 and path[0] == path[-1]
 
