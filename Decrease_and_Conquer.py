@@ -50,8 +50,6 @@ print("Cycle vertices:", cycle)
 
 
 """ 
-
-
 DFS Function:
 
 1: Starts at a vertex and recursively explores its neighbors.
