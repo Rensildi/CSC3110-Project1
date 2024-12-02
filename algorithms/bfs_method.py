@@ -1,14 +1,15 @@
-def find_cycle_bfs(graph):
-    def is_cycle(path):
-        return len(path) > 1 and path[0] == path[-1]
+def find_cycle(graph):
+    def has_cycle(path):
+        return path[-1] in path[:-1]
 
     for start_node in graph.nodes:
         paths = [[start_node]]  
         while paths:
             current_path = paths.pop(-1)  
 
-            if is_cycle(current_path):
-                return current_path
+            if has_cycle(current_path):
+                last_node_index = current_path.index(current_path[-1])
+                return current_path[last_node_index:]
 
             last_node = current_path[-1]
             for neighbor in graph.neighbors(last_node):
