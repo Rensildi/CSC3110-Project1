@@ -1,0 +1,22 @@
+DFS_Cycle_Detection(graph)
+    DFS(node, visited, rec_stack)
+        mark node as visited
+        mark node in recursion stack
+        
+        for each neighbor of node in graph
+            if neighbor is not visited and DFS(neighbor, visited, rec_stack) returns True
+                return True
+            else if neighbor is in recursion stack
+                return True
+        
+        unmark node from recursion stack
+        return False
+    
+    initialize visited and rec_stack as dictionaries with all nodes set to False
+    
+    for each node in graph
+        if node is not visited
+            if DFS(node, visited, rec_stack) returns True
+                return True
+    
+    return False

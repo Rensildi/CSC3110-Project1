@@ -1,0 +1,19 @@
+function find_cycle(graph):
+    function has_cycle(path):
+        return path[-1] in path[-1]
+
+    for each start_node in graph.nodes:
+        paths = [ [start_node] ]
+        while paths is not empty:
+            current_path = remove last path from paths
+            
+            if has_cycle(current_path):
+                last_node_index = index of current_path[-1] in current_path
+                return sublist of current_path starting from last_node_index
+                
+            last_node = last element of current_path
+            for each neighbor in graph.neighbors(last_node):
+                new_path = copy of current_path with neighbor added
+                append new_path to paths
+
+    return None
