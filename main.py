@@ -29,10 +29,17 @@ def plot_graph_with_cycle(graph, cycle):
 
     plt.show()
 
-num_vertices = 6
+num_vertices = 5
 
 # Create random adjacency matrix
-adjacency_matrix = np.random.randint(2, size=(num_vertices, num_vertices))
+#adjacency_matrix = np.random.randint(2, size=(num_vertices, num_vertices))
+adjacency_matrix = np.matrix([
+[0, 1, 1, 0, 1],
+[0, 0, 0, 1, 0],
+[0, 1, 0, 0, 0],
+[0, 0, 0, 0, 1],
+[0, 0, 1, 0, 0]
+])
 # Ensure diagonal of adjacency matrix is 0
 np.fill_diagonal(adjacency_matrix, 0)
 
@@ -43,6 +50,6 @@ vertices = list(string.ascii_uppercase[:num_vertices])
 relabeling = {i: vertices[i] for i in range(len(vertices))}
 G = nx.relabel_nodes(G, relabeling)
 
-cycle = dfs_method.find_cycle_dfs(G)
+cycle = dfs_method.find_cycle(G)
 
 plot_graph_with_cycle(G, cycle)
