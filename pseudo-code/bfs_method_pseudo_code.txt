@@ -3,7 +3,7 @@ ALGORITHM findCycle(G):
 	// Input: Graph, "G", which contains a vertex set G.V and an edge set G.E
 	// Output: An array of edges that form a cycle
 	ALGORITHM hasCycle(path):
-		// Determines whether an array of nodes which forms a path contains a cycle
+		// Determines whether an array of nodes which form a path contains a cycle
 		// Input: Array of nodes, "path".
 		// Output: Boolean
 		return path[-1] in path[:-1]
@@ -11,7 +11,7 @@ ALGORITHM findCycle(G):
 	for each vertex in G.V:
 		paths <- [[vertex]]
 		while paths is not empty:
-			currentPath <- pop(paths)
+			currentPath <- dequeue(paths)
 
 			if hasCycle(currentPath):
 				lastVertexIndex <- index(currentPath, currentPath[-1])
